@@ -54,4 +54,12 @@ public class UserBookingService {
         user.printTickets();
     }
 
+    public Boolean cancelTicket(String ticketId){
+        if(ticketId == null || ticketId.isEmpty()){
+            return Boolean.FALSE;
+        }
+        boolean removed = user.getTicketsBooked().removeIf(ticket -> ticket.getTicketId().equals(ticketId));
+        return removed;
+    }
+
 }
