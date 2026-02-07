@@ -10,3 +10,4 @@ build
 /build/
 .gradle/
 out/
+.idea/
