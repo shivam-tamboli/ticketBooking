@@ -1,6 +1,8 @@
 package org.example.util;
 
-public class userServiceUtil {
+import org.mindrot.jbcrypt.BCrypt;
+
+public class UserServiceUtil {
 
     public static String hashPassword(String plainPassword) {
         return BCrypt.hashpw(plainPassword, BCrypt.gensalt());
