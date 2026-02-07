@@ -19,7 +19,7 @@ public class UserBookingService {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    private static final String USERS_PATH = "lib/src/main/java/org.example/localDb/users.json";
+    private static final String USERS_PATH = "src/main/resources/localDb/users.json";
 
     public UserBookingService(User user) throws IOException {
 
