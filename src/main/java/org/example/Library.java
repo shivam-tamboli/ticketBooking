@@ -4,13 +4,29 @@
 package org.example;
 
 
+import org.example.services.UserBookingService;
+
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
 
     public static void main(String[] args){
-        System.out.println("Hello");
+        System.out.println("Running train booking system");
+        Scanner scanner = new Scanner(System.in);
+        int option = 0;
+        UserBookingService userBookingService;
+
+        try{
+            userBookingService = new UserBookingService();
+        }catch (IOException e){
+            System.out.println("Something is wrong");
+            return;
+        }
+
 
     }
 }
