@@ -3,7 +3,7 @@ package org.example.services;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.entity.User;
-
+import org.example.util.UserServiceUtil;
 
 
 import java.io.File;
@@ -19,12 +19,12 @@ public class UserBookingService {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    private static final String USERS_PATH = "src/main/resources/localDb/users.json";
+    private static final String USERS_FILE_PATH = "src/main/resources/localDb/users.json";
 
     public UserBookingService(User user) throws IOException {
 
         this.user = user;
-        File users = new File(USERS_PATH);
+        File users = new File(USERS_FILE_PATH);
         userList = objectMapper.readValue(users, new TypeReference<List<User>>(){});
     }
 
@@ -48,6 +48,10 @@ public class UserBookingService {
     private void saveUserListToFile() throws IOException{
         File userFile = new File(USERS_FILE_PATH);
         objectMapper.writeValue(userFile, userFile);
+    }
+
+    public void fetchBooking(){
+        user.printTickets();
     }
 
 }
