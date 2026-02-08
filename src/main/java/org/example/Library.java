@@ -67,7 +67,7 @@ public class Library {
 
                 case 3:
                     System.out.println("Fetching your bookings");
-                    userBookingService.fetchBooking();
+                    userBookingService.fetchBookings();
                     break;
 
                 case 4:
