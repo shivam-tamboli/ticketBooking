@@ -104,4 +104,8 @@ public class UserBookingService {
         }
     }
 
+    public List<List<Integer>> fetchSeats(Train train){
+        return train.getSeats();
+    }
+
 }
