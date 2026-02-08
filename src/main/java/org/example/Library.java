@@ -51,6 +51,22 @@ public class Library {
                     User userToSignup = new User(UUID.randomUUID().toString(), nameToSignUp, passwordToSignUp, UserServiceUtil.hashPassword(passwordToSignUp), new ArrayList<>());
                     userBookingService.signUp(userToSignup);
                     break;
+
+                case 2:
+                    System.out.println("Enter the username to login");
+                    String nameToLogin = scanner.next();
+                    System.out.println("Enter the password to login");
+                    String passwordToLogin = scanner.next();
+                    User userToLogin = new User(UUID.randomUUID().toString(), nameToLogin, passwordToLogin, UserServiceUtil.hashPassword(passwordToLogin), new ArrayList<>());
+                    try{
+                        userBookingService = new UserBookingService(userToLogin); /////
+                    }catch (IOException ex){
+                        return;
+                    }
+                    break;
+
+
+
             }
         }
     }
