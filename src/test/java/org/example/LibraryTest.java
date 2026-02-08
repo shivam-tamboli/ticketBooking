@@ -3,11 +3,14 @@
  */
 package org.example;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LibraryTest {
-    @Test public void someLibraryMethodReturnsTrue() {
+    @Test
+    public void someLibraryMethodReturnsTrue() {
         Library classUnderTest = new Library();
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
     }

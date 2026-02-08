@@ -4,10 +4,14 @@
 package org.example;
 
 
+import org.example.entity.User;
 import org.example.services.UserBookingService;
+import org.example.util.UserServiceUtil;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -37,6 +41,17 @@ public class Library {
             System.out.println("6. Cancel my Booking");
             System.out.println("7. Exit the App");
             option = scanner.nextInt();
+
+            switch (option){
+                case 1:
+                    System.out.println("Enter the username to signup");
+                    String nameToSignUp = scanner.next();
+                    System.out.println("Enter the password to signup");
+                    String passwordToSignUp = scanner.next();
+                    User userToSignup = new User(UUID.randomUUID().toString(), nameToSignUp, passwordToSignUp, UserServiceUtil.hashPassword(passwordToSignUp), new ArrayList<>());
+                    userBookingService.signUp(userToSignup);
+                    break;
+            }
         }
     }
 }

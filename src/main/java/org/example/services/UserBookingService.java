@@ -24,16 +24,15 @@ public class UserBookingService {
     public UserBookingService(User user) throws IOException {
 
         this.user = user;
-        loadUsers();
+        loadUserListFromFile();
     }
 
     public UserBookingService() throws IOException {
-        loadUsers();
+        loadUserListFromFile();
     }
 
-    public List<User> loadUsers() throws IOException{
-        File users = new File(USERS_FILE_PATH);
-        userList = objectMapper.readValue(users, new TypeReference<List<User>>(){});
+    public void loadUserListFromFile() throws IOException{
+        userList = objectMapper.readValue(new File(USERS_FILE_PATH), new TypeReference<List<User>>() {});
     }
 
     public Boolean loginUser(){
