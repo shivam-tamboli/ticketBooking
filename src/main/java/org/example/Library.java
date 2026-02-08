@@ -65,6 +65,15 @@ public class Library {
                     }
                     break;
 
+                case 3:
+                    System.out.println("Fetching your bookings");
+                    userBookingService.fetchBooking();
+                    break;
+
+                case 4:
+
+
+
 
 
             }
