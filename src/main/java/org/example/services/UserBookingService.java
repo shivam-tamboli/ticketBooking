@@ -2,12 +2,14 @@ package org.example.services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.entity.Train;
 import org.example.entity.User;
 import org.example.util.UserServiceUtil;
 
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -67,6 +69,15 @@ public class UserBookingService {
         }
         boolean removed = user.getTicketsBooked().removeIf(ticket -> ticket.getTicketId().equals(ticketId));
         return removed;
+    }
+
+    public List<Train> getTrains(String source, String destination){
+        try{
+            TrainService trainService = new TrainService();
+            return trainService.searchTrains(source, destination);
+        }catch (IOException ex){
+            return new ArrayList<>();
+        }
     }
 
 }
