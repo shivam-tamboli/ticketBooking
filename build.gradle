@@ -1,6 +1,17 @@
 plugins {
     id 'java'
+    id 'application'
 }
+
+application {
+    mainClass = 'org.example.Library'
+}
+
+tasks.named('run') {
+    standardInput = System.in
+}
+
+
 
 repositories {
     mavenCentral()

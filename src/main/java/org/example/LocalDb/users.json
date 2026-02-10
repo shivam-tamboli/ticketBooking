@@ -34,4 +34,10 @@
   "hashed_password" : "$2a$10$j6MpMpn1k.QWIX6a6QPu4enGqxAFaFtGdIcCEmFpwPbR41VgGecgS",
   "tickets_booked" : [ ],
   "user_id" : "9459edf8-1056-4070-8009-5c3573797d55"
+}, {
+  "name" : "shivam",
+  "password" : "123",
+  "hashed_password" : "$2a$10$tCaoIy8qvyXsFkhLW6BF7uMCUMLNOAlOELppMbsM4/J.FfDEWBC7u",
+  "tickets_booked" : [ ],
+  "user_id" : "4a77a743-1c4c-4fc1-aaea-66341e266473"
 } ]
